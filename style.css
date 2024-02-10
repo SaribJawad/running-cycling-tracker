@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  font-family: "Manrope", sans-serif;
+  display: flex;
+}
+
+.sidebar {
+  height: 100vh;
+  min-width: 500px;
+  width: 500px;
+  background-color: #404042;
+}
+
+.workouts {
+  /* padding: 50px; */
+  list-style: none;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 20px;
+  /* background-color: rebeccapurple; */
+}
+
+.workouts::-webkit-scrollbar {
+  width: 0;
+}
+
+.form {
+  background-color: #232425;
+  border-radius: 5px;
+  color: #fff;
+  /* margin: 20px; */
+  padding: 20px;
+
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 2.5rem;
+
+  /* Match height and activity boxes */
+  height: fit-content;
+  width: fit-content;
+  transition: all 0.5s, transform 1ms;
+}
+
+.form.hidden {
+  transform: translateY(-30rem);
+  height: 0;
+  padding: 0 2.25rem;
+  margin-bottom: 0;
+  opacity: 0;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+}
+
+.form-row-hidden {
+  display: none;
+}
+
+.form-label {
+  flex: 0 0 50%;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.3rem 1.1rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.form-input:focus {
+  outline: none;
+  background-color: #fff;
+}
+
+.form-btn {
+  display: none;
+}
+
+.workout {
+  background-color: #232425;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 1.75rem;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.75rem 1.5rem;
+}
+
+.workout-title {
+  font-size: 1rem;
+  font-weight: 600;
+  grid-column: 1 / -1;
+}
+
+.workout-details {
+  margin: 0 auto;
+  display: flex;
+  align-items: baseline;
+}
+
+.workout-icon {
+  font-size: 1.2rem;
+  margin-right: 0.2rem;
+}
+
+.workout-value {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.workout-unit {
+  font-size: 0.8rem;
+  color: var(--color-light--1);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.map {
+  width: 70%;
+  height: 100vh;
+  background-color: #9c9b9a;
+}
+
+#delete-btn {
+  display: flex;
+  /* width: 100%; */
+  padding: 0.8rem 2rem;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #232425;
+  border: none;
+  outline: none;
+  border-radius: 0px;
+  transition: linear 0.1s;
+}
+#delete-btn:hover {
+  background-color: #111111;
+  border-radius: 20px;
+}
+
+#delete-btn.hidden {
+  display: none;
+}
+
+/* Popup width is defined in JS using options */
+.leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: #404042;
+  color: #fff;
+  border-radius: 5px;
+  padding-right: 0.6rem;
+}
+
+.leaflet-popup .leaflet-popup-content {
+  font-size: 0.9rem;
+}
+
+.leaflet-popup .leaflet-popup-tip {
+  background-color: #404042;
+}
+
+.running-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid #0ba15b;
+}
+.cycling-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid #cfa61e;
+}
